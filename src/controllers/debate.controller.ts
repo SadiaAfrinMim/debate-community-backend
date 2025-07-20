@@ -8,7 +8,7 @@ import {
   paginationSchema,
   searchQuerySchema
 } from '../utils/validation.util';
-import { IDebate } from '../types/debate.type';
+
 
  
 
@@ -22,6 +22,7 @@ export class DebateController {
     // Directly pass req.body to the service (no validation)
     const debate = await DebateService.create({
       ...req.body,
+       
       
     });
     

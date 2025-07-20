@@ -1,3 +1,4 @@
+// src/types/debate.type.ts
 export interface IDebate {
   id: string;
   title: string;
@@ -6,14 +7,12 @@ export interface IDebate {
   category: string;
   bannerUrl?: string;
   durationHours: number;
-  creatorId: string;       // Added for ownership tracking
-  status: 'active' | 'closed' | 'archived'; // Added for lifecycle management
+  creatorId: string;
   createdAt: Date;
-  updatedAt: Date;         // Added for tracking last modification
+  updatedAt: Date;
   expiresAt: Date;
+  status: 'active' | 'closed' | 'archived';
   supportVotes: number;
   opposeVotes: number;
-  voters: string[];        // Added to track who voted (prevent duplicate votes)
-  viewCount?: number;      // Optional for popularity tracking
-  lastActivityAt?: Date;   // Optional for sorting by activity
+  voters: string[];
 }

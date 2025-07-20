@@ -6,7 +6,7 @@ const debates = new Map<string, IDebate>();
 
 // Define allowed sortable fields
 type SortableField = keyof Pick<IDebate, 
-  'createdAt' | 'updatedAt' | 'title' | 'supportVotes' | 'opposeVotes' | 'viewCount' | 'lastActivityAt'
+  'createdAt' | 'updatedAt' | 'title' | 'supportVotes' | 'opposeVotes' 
 >;
 
 export const DebateModel = {

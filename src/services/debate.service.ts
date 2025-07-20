@@ -13,26 +13,8 @@ export class DebateService {
   /**
    * Create a new debate
    */
-//   static async create(input: CreateDebateInput): Promise<IDebate> {
-//     const now = new Date();
-//     const debate = {
-//       id: uuidv4(),
-//       ...input,
-//       creatorId: input.creatorId,
-//       createdAt: now,
-//       updatedAt: now,
-//       expiresAt: new Date(now.getTime() + input.durationHours * 3600_000),
-//       status: 'active' as const,
-//       supportVotes: 0,
-//       opposeVotes: 0,
-//       voters: []
-//     };
-    
-//     return await DebateModel.create(debate);
-//   }
-
- static create(input: CreateDebateInput) {
-     const now = new Date();
+  static async create(input: CreateDebateInput): Promise<IDebate> {
+    const now = new Date();
     const debate = {
       id: uuidv4(),
       ...input,
@@ -44,10 +26,28 @@ export class DebateService {
       supportVotes: 0,
       opposeVotes: 0,
       voters: []
-    
     };
-    return DebateModel.create(debate);
+    
+    return await DebateModel.create(debate);
   }
+
+//  static create(input: CreateDebateInput) {
+//      const now = new Date();
+//     const debate = {
+//       id: uuidv4(),
+//       ...input,
+//       creatorId: input.creatorId,
+//       createdAt: now,
+//       updatedAt: now,
+//       expiresAt: new Date(now.getTime() + input.durationHours * 3600_000),
+//       status: 'active' as const,
+//       supportVotes: 0,
+//       opposeVotes: 0,
+//       voters: []
+    
+//     };
+//     return DebateModel.create(debate);
+//   }
 
   /**
    * Get paginated list of debates
